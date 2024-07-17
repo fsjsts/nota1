@@ -6,7 +6,7 @@
 // Controller Logic: The controller function can access request data from req and manipulate the response using res. These objects provide access to request body data, headers, parameters, cookies, and methods to send responses with status codes, headers, and content.
 const express = require('express');
 const router = express.Router();
-const userController = require("../controllers/user.controller");
+const userController = require("@controllers/user.controller");
 
 router.route('/test').get((request, response) => { response.send('<h1>Hello my World!</h1>') })
 

@@ -1,3 +1,5 @@
+require('module-alias/register');
+
 const express = require('express')
 const cors = require('cors')
 
@@ -14,7 +16,7 @@ app.use(express.json())
 app.use(express.static('dist'))
 
 // 2. routes
-const routes = require('./routes');
+const routes = require('./v1/routes');
 app.use('/', routes);
 
 // 3. middlewares
