@@ -8,9 +8,10 @@ const express = require('express');
 const router = express.Router();
 const userController = require("@controllers/user.controller");
 
-router.route('/test').get((request, response) => { response.send('<h1>Hello my World!</h1>') })
+router.route('/test').get((request, response) => { response.send('<h1>Nota, minimal, immutable!</h1>') })
 
 router.post("/login",    userController.userLogin)
 router.post("/register", userController.userRegister)
+router.post("/signup",   userController.userSignup)     //speer
 
 module.exports = router;
