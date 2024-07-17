@@ -5,6 +5,7 @@ import Login from './components/Login'
 import Note from './components/Note'
 import noteService from './components/communication'
 import getDate from './components/GetDate'
+import config from './components/config';
 
 const App = () => {
   const [notes, setNotes] = useState([])
@@ -50,7 +51,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post("http://localhost:3001/login", { email, password })
+    axios.post(`${config.baseURL}/login`, { email, password })
     .then(result => {
         console.log(result)
         if(result.data === "Success"){
@@ -69,9 +70,9 @@ const App = () => {
   return (
     <>
       <Login onLogin={handleLogin} />
-      <div class="container">
-        <div class="chat-body">
-          <ul class="chatbot-message"> 
+      <div className="container">
+        <div className="chat-body">
+          <ul className="chatbot-message"> 
             {notes.filter((note) => note.userid === userId)
               .map(note => 
               <Note key={note.id} note={note} />
@@ -79,7 +80,7 @@ const App = () => {
           </ul>
         </div>
 
-        <div class="chat-input">
+        <div className="chat-input">
           <form onSubmit={addNote} className="chat-form">
             
             <textarea 

@@ -14,6 +14,6 @@ noteSchema.set('toJSON', {
   }
 })
 
-const NoteModel = mongoose.model("notes", noteSchema)
+const NoteModel = mongoose.model("notemodel", noteSchema)
 
 module.exports = NoteModel
